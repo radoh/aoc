@@ -1,4 +1,5 @@
 import os
+from functools import reduce
 
 
 def input_fn(filename):
@@ -24,12 +25,14 @@ def clear():
     import os
     os.system('clear')
 
+
 def egcd(a, b):
     if a == 0:
-        return (b, 0, 1)
+        return b, 0, 1
     else:
         g, y, x = egcd(b % a, a)
-        return (g, x - (b // a) * y, y)
+        return g, x - (b // a) * y, y
+
 
 def modinv(a, m):
     g, x, y = egcd(a, m)
