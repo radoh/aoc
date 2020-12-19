@@ -40,3 +40,7 @@ def modinv(a, m):
         raise Exception('modular inverse does not exist')
     else:
         return x % m
+
+
+def in_bounds(r, c, matrix):
+    return 0 <= r < len(matrix) and 0 <= c < len(matrix[r])
